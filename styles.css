@@ -157,7 +157,9 @@ input,select{
 }
 
 .stickers-grid{
+  display:grid;
   grid-template-columns:repeat(4,1fr);
+  gap:12px;
 }
 
 .sticker{
@@ -224,13 +226,13 @@ input,select{
     grid-template-columns:repeat(2,1fr);
   }
 
-.teams-grid{
-  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
-}
+  .teams-grid{
+    grid-template-columns:1fr;
+  }
 
-.team-card{
-  min-height:530px;
-}
+  .team-card{
+    min-height:auto;
+  }
 
   .stickers-grid{
     grid-template-columns:repeat(4,1fr);
