@@ -69,5 +69,3 @@ $('#importInput').addEventListener('change', async e=>{
   state=JSON.parse(await file.text()); save(); render();
 });
 $('#resetBtn').addEventListener('click',()=>{ if(confirm('¿Reiniciar todo tu progreso?')){state={};save();render();} });
-if('serviceWorker' in navigator){ navigator.serviceWorker.register('./sw.js').catch(()=>{}); }
-render();
