@@ -128,20 +128,22 @@ button{
   color:white;
 }
 
-/* MÁS GRANDE PARA QUE SE VEAN MEX 4, MEX 5, ETC. */
+/* CONTENEDOR GENERAL DE EQUIPOS */
 .teams-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(560px,1fr));
   gap:32px;
 }
 
+/* TARJETA DE CADA EQUIPO */
 .team-card{
   padding:32px;
   overflow:visible;
   min-height:610px;
 }
 
-.team-header{
+/* ESTO COINCIDE CON TU app.js: class="team-head" */
+.team-head{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
@@ -149,19 +151,22 @@ button{
   margin-bottom:22px;
 }
 
-.team-name{
+.team-head h3{
+  margin:0;
   font-size:30px;
   font-weight:900;
 }
 
-.team-code{
+.team-head small{
+  display:block;
   font-size:18px;
   font-weight:800;
   opacity:.9;
   margin-top:4px;
 }
 
-.counter{
+/* ESTO COINCIDE CON TU app.js: class="pill" */
+.pill{
   color:var(--gold);
   font-weight:900;
   border:1px solid rgba(255,255,255,.25);
@@ -170,14 +175,15 @@ button{
   white-space:nowrap;
 }
 
-/* 4 columnas amplias dentro de cada equipo */
-.stickers-grid{
+/* ESTO COINCIDE CON TU app.js: class="stickers" */
+.stickers{
   display:grid;
   grid-template-columns:repeat(4,minmax(110px,1fr));
   gap:16px;
   width:100%;
 }
 
+/* BOTONES DE STICKERS */
 .sticker{
   min-height:96px;
   padding:12px 10px;
@@ -197,6 +203,10 @@ button{
   word-break:keep-all;
 }
 
+.sticker span{
+  display:block;
+}
+
 .sticker small{
   display:block;
   margin-top:6px;
@@ -205,24 +215,33 @@ button{
   opacity:.75;
 }
 
+/* ESTADOS SEGÚN TU app.js: missing / owned / dup */
+.sticker.missing{
+  background:rgba(255,255,255,.12);
+}
+
 .sticker.owned{
   background:#20c565;
 }
 
-.sticker.duplicate{
+.sticker.dup{
   background:#f59e0b;
 }
 
-.card-actions{
+/* BOTONES MARCAR TODO / LIMPIAR */
+.team-actions{
   display:flex;
   gap:12px;
   margin-top:22px;
 }
 
-.card-actions button{
+.team-actions button{
   flex:1;
   padding:13px;
   font-size:15px;
+  background:rgba(255,255,255,.16);
+  color:white;
+  border:1px solid rgba(255,255,255,.20);
 }
 
 .bottom-actions{
@@ -236,6 +255,21 @@ button{
   z-index:20;
 }
 
+.hidden{
+  display:none;
+}
+
+#photoPanel{
+  margin-bottom:24px;
+}
+
+#previewImage{
+  max-width:100%;
+  border-radius:20px;
+  margin-top:14px;
+}
+
+/* TABLET */
 @media(max-width:900px){
   .teams-grid{
     grid-template-columns:1fr;
@@ -246,6 +280,7 @@ button{
   }
 }
 
+/* CELULAR */
 @media(max-width:700px){
   .app{
     padding:20px 14px 140px;
@@ -289,15 +324,15 @@ button{
     padding:18px;
   }
 
-  .team-header{
+  .team-head{
     flex-direction:column;
   }
 
-  .team-name{
+  .team-head h3{
     font-size:24px;
   }
 
-  .stickers-grid{
+  .stickers{
     grid-template-columns:repeat(4,minmax(76px,1fr));
     gap:10px;
   }
@@ -313,7 +348,7 @@ button{
     font-size:11px;
   }
 
-  .card-actions{
+  .team-actions{
     flex-direction:column;
   }
 
@@ -325,7 +360,7 @@ button{
 }
 
 @media(max-width:420px){
-  .stickers-grid{
+  .stickers{
     grid-template-columns:repeat(4,minmax(70px,1fr));
     gap:8px;
   }
