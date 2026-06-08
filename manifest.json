@@ -1,12 +1,14 @@
 {
-  "name":"Sticker Tracker 2026",
-  "short_name":"Sticker Tracker",
-  "start_url":"./index.html",
-  "display":"standalone",
-  "background_color":"#0b5d3b",
-  "theme_color":"#006341",
-  "icons":[
+  "name": "Sticker Tracker 2026",
+  "short_name": "Sticker Tracker",
+  "description": "Control rápido de stickers pegados, faltantes y repetidos.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b5d3b",
+  "theme_color": "#006341",
+  "icons": [
     {"src":"assets/icon-180.png","sizes":"180x180","type":"image/png"},
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png"},
     {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png"}
   ]
 }

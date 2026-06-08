@@ -7,63 +7,61 @@
   <title>Sticker Tracker 2026</title>
   <link rel="manifest" href="./manifest.json?v=1000" />
   <link rel="apple-touch-icon" href="./assets/icon-180.png?v=1000" />
+  <link rel="icon" href="./assets/icon-192.png?v=1000" />
   <link rel="stylesheet" href="./styles.css?v=1000" />
 </head>
 <body>
   <div class="app">
-    <header class="hero">
-      <nav class="topbar">
-        <img src="./assets/logo.png?v=1000" alt="Sticker Tracker 2026" class="app-logo" />
-        <div>
-          <h1>Sticker Tracker 2026</h1>
-          <p>Control rápido de pegadas, faltantes y repetidas.</p>
-        </div>
-      </nav>
-
-      <section class="stats">
-        <article><strong id="ownedCount">0</strong><span>Pegadas</span></article>
-        <article><strong id="missingCount">0</strong><span>Faltantes</span></article>
-        <article><strong id="dupCount">0</strong><span>Repetidas</span></article>
-        <article><strong id="progressPct">0%</strong><span>Avance</span></article>
-      </section>
+    <header class="header">
+      <img src="./assets/logo.png?v=1000" alt="Sticker Tracker 2026" class="logo" />
+      <div>
+        <h1>Sticker Tracker 2026</h1>
+        <p class="subtitle">Control rápido de stickers pegados, faltantes y repetidos.</p>
+      </div>
     </header>
 
-    <main>
-      <section class="actions-card">
-        <div>
-          <h2>Modo cámara</h2>
-          <p>Toma una foto de una página del álbum y úsala como referencia mientras marcas tus stickers.</p>
-        </div>
-        <label class="camera-btn">
-          Abrir cámara
-          <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
-        </label>
-      </section>
+    <section class="stats">
+      <article class="stat"><strong id="ownedCount">0</strong><span>Pegadas</span></article>
+      <article class="stat"><strong id="missingCount">0</strong><span>Faltantes</span></article>
+      <article class="stat"><strong id="dupCount">0</strong><span>Repetidas</span></article>
+      <article class="stat"><strong id="progressPct">0%</strong><span>Avance</span></article>
+    </section>
 
-      <section id="photoPanel" class="photo-panel hidden">
-        <img id="previewImage" alt="Preview de página" />
-        <button id="closePhoto">Cerrar foto</button>
-      </section>
+    <section class="camera-box">
+      <div>
+        <h2>Modo cámara</h2>
+        <p>Toma una foto de una página del álbum y úsala como referencia mientras marcas tus stickers.</p>
+      </div>
+      <label class="primary camera-label">Abrir cámara
+        <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
+      </label>
+    </section>
 
-      <section class="filters">
-        <input id="search" type="search" placeholder="Buscar equipo o código: ARG, México, FWC..." />
-        <select id="statusFilter">
-          <option value="all">Todos</option>
-          <option value="missing">Faltantes</option>
-          <option value="owned">Pegadas</option>
-          <option value="dup">Repetidas</option>
-        </select>
-      </section>
+    <section id="photoPanel" class="photo-panel hidden">
+      <img id="previewImage" alt="Vista previa de página" />
+      <button id="closePhoto" class="danger">Cerrar foto</button>
+    </section>
 
-      <section id="teams" class="team-grid"></section>
-    </main>
+    <section class="controls">
+      <input id="search" type="search" placeholder="Buscar equipo o código: ARG, México, FWC..." />
+      <select id="statusFilter">
+        <option value="all">Todos</option>
+        <option value="missing">Faltantes</option>
+        <option value="owned">Pegadas</option>
+        <option value="dup">Repetidas</option>
+      </select>
+    </section>
+
+    <section id="teams" class="teams-grid"></section>
   </div>
 
-  <footer class="bottom-actions">
+  <div class="bottom-actions">
     <button id="exportBtn" class="primary">Exportar progreso</button>
-    <label class="import-btn primary">Importar respaldo<input id="importInput" type="file" accept="application/json" hidden /></label>
+    <label class="primary import-label">Importar respaldo
+      <input id="importInput" type="file" accept="application/json" hidden />
+    </label>
     <button id="resetBtn" class="danger">Reiniciar</button>
-  </footer>
+  </div>
 
   <script src="./data.js?v=1000"></script>
   <script src="./app.js?v=1000"></script>

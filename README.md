@@ -2,13 +2,12 @@
 
 Sitio web estático para llevar control de stickers pegados, faltantes y repetidos.
 
-## Incluye
+Incluye 48 selecciones, 20 stickers FWC y 14 Coca-Cola: 994 stickers en total.
 
-- 48 selecciones en orden de álbum, 20 stickers cada una.
-- FIFA World Cup: FWC 0 al FWC 19.
-- Coca-Cola: CC 1 al CC 14.
-- Total: 994 stickers.
+## Cómo usar
 
-## Uso
-
-Sube todos los archivos a GitHub y despliega con Vercel.
+1. Sube todos los archivos a GitHub.
+2. Publica el proyecto en Vercel.
+3. Abre el sitio en navegador de iPhone, Android o PC.
+4. Toca cada sticker para cambiar entre falta, pegada y repetida.
+5. Usa exportar/importar respaldo para guardar tu progreso.
