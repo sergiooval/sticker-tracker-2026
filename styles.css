@@ -6,21 +6,21 @@
   --white:#ffffff;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(135deg,#06351f,#0b5d3b,#0f7a4d);
+  background:
+    radial-gradient(circle at top left,rgba(255,255,255,.18),transparent 32%),
+    linear-gradient(135deg,#06351f,#0b5d3b,#0f7a4d);
   color:white;
 }
 
 .app{
-  max-width:1400px;
+  max-width:1320px;
   margin:0 auto;
-  padding:32px 20px 120px;
+  padding:34px 22px 130px;
 }
 
 .header{
@@ -33,13 +33,15 @@ body{
 .logo{
   width:86px;
   height:86px;
-  border-radius:22px;
+  border-radius:24px;
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
 h1{
   font-size:56px;
   line-height:1;
   margin:0;
+  letter-spacing:-2px;
 }
 
 .subtitle{
@@ -52,49 +54,66 @@ h1{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:18px;
-  margin:28px 0;
+  margin:28px 0 34px;
 }
 
-.stat{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.25);
-  border-radius:22px;
-  padding:24px;
-  text-align:center;
-  backdrop-filter:blur(12px);
-}
-
-.stat strong{
-  color:var(--gold);
-  font-size:36px;
-  display:block;
-}
-
+.stat,
 .camera-box,
 .controls,
 .team-card,
 .bottom-actions{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+  backdrop-filter:blur(16px);
+}
+
+.stat{
   border-radius:24px;
-  backdrop-filter:blur(12px);
+  padding:24px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  color:var(--gold);
+  font-size:38px;
+  font-weight:950;
+}
+
+.stat span{
+  font-size:14px;
+  font-weight:700;
+  opacity:.9;
 }
 
 .camera-box{
-  padding:22px;
-  margin-bottom:20px;
+  border-radius:26px;
+  padding:24px;
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
 }
 
 .camera-box h2{
   margin:0 0 8px;
-  font-size:26px;
+  font-size:28px;
+}
+
+.camera-box p{
+  margin:0;
+  opacity:.9;
+  font-size:17px;
 }
 
 .controls{
   display:flex;
   gap:12px;
   padding:14px;
-  margin-bottom:24px;
+  margin-bottom:26px;
+  border-radius:24px;
 }
 
 input,
@@ -103,7 +122,7 @@ button{
   font:inherit;
   border:0;
   border-radius:16px;
-  padding:14px 18px;
+  padding:15px 18px;
 }
 
 input{
@@ -112,12 +131,13 @@ input{
 
 button{
   cursor:pointer;
-  font-weight:800;
+  font-weight:850;
 }
 
 .primary{
   background:#23c16b;
   color:white;
+  box-shadow:0 10px 25px rgba(35,193,107,.25);
 }
 
 .danger{
@@ -127,76 +147,86 @@ button{
 
 .teams-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(520px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(440px,1fr));
   gap:24px;
 }
 
 .team-card{
+  border-radius:28px;
   padding:24px;
+  overflow:hidden;
 }
 
 .team-head{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
+  gap:14px;
   margin-bottom:18px;
 }
 
 .team-head h3{
   margin:0;
   font-size:30px;
-  font-weight:900;
+  font-weight:950;
+  letter-spacing:-.5px;
 }
 
 .team-head small{
   display:block;
-  opacity:.8;
+  margin-top:4px;
   font-size:15px;
+  font-weight:800;
+  opacity:.85;
 }
 
 .pill{
   color:var(--gold);
-  font-weight:900;
-  border:1px solid rgba(255,255,255,.25);
+  font-weight:950;
+  border:1px solid rgba(255,255,255,.24);
   border-radius:999px;
-  padding:8px 14px;
+  padding:9px 14px;
+  background:rgba(0,0,0,.15);
+  white-space:nowrap;
 }
 
 .stickers{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4,minmax(86px,1fr));
   gap:12px;
 }
 
 .sticker{
-  min-height:95px;
-  border-radius:16px;
-  background:rgba(255,255,255,.10);
+  min-height:86px;
+  padding:10px 8px;
+  border-radius:18px;
+  background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.18);
   color:white;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:10px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
 }
 
 .sticker span{
-  font-size:18px;
-  font-weight:900;
-  display:block;
-  line-height:1.1;
+  font-size:17px;
+  font-weight:950;
+  line-height:1.05;
+  white-space:nowrap;
 }
 
 .sticker small{
   margin-top:6px;
   font-size:12px;
-  opacity:.8;
+  font-weight:750;
+  opacity:.78;
 }
 
 .sticker.owned{
-  background:#22c55e;
+  background:#20c565;
 }
 
 .sticker.dup{
@@ -211,51 +241,98 @@ button{
 
 .team-actions button{
   flex:1;
+  padding:12px;
+  font-size:14px;
 }
 
 .bottom-actions{
   position:fixed;
   left:50%;
+  bottom:24px;
   transform:translateX(-50%);
-  bottom:20px;
   display:flex;
   gap:12px;
   padding:14px;
+  border-radius:26px;
   z-index:100;
 }
 
 .hidden{
-  display:none !important;
+  display:none!important;
+}
+
+.photo-panel{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.photo-panel img{
+  max-width:95vw;
+  max-height:85vh;
+  border-radius:20px;
 }
 
 @media(max-width:900px){
-
-  .teams-grid{
-    grid-template-columns:1fr;
-  }
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
+  .app{
+    padding:22px 14px 135px;
   }
 
   h1{
     font-size:38px;
   }
 
-  .stickers{
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
+  .logo{
+    width:68px;
+    height:68px;
   }
 
-  .sticker{
-    min-height:82px;
+  .stats{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .sticker span{
-    font-size:15px;
+  .camera-box{
+    align-items:flex-start;
+    flex-direction:column;
   }
 
   .controls{
     flex-direction:column;
+  }
+
+  .teams-grid{
+    grid-template-columns:1fr;
+  }
+
+  .team-card{
+    padding:18px;
+  }
+
+  .team-head h3{
+    font-size:26px;
+  }
+
+  .stickers{
+    grid-template-columns:repeat(4,minmax(68px,1fr));
+    gap:9px;
+  }
+
+  .sticker{
+    min-height:74px;
+    border-radius:15px;
+  }
+
+  .sticker span{
+    font-size:14px;
+  }
+
+  .bottom-actions{
+    width:calc(100% - 24px);
+    overflow-x:auto;
   }
 }
