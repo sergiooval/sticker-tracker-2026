@@ -6,7 +6,9 @@
   --white:#ffffff;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -16,9 +18,9 @@ body{
 }
 
 .app{
-  max-width:1280px;
+  max-width:1500px;
   margin:0 auto;
-  padding:32px 20px 120px;
+  padding:32px 24px 130px;
 }
 
 .header{
@@ -92,13 +94,15 @@ h1{
   display:flex;
   gap:12px;
   padding:14px;
-  margin-bottom:24px;
+  margin-bottom:28px;
   position:sticky;
   top:0;
   z-index:5;
 }
 
-input,select,button{
+input,
+select,
+button{
   font:inherit;
   border:0;
   border-radius:16px;
@@ -124,15 +128,17 @@ button{
   color:white;
 }
 
+/* MÁS GRANDE PARA QUE SE VEAN MEX 4, MEX 5, ETC. */
 .teams-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(430px,1fr));
-  gap:26px;
+  grid-template-columns:repeat(auto-fit,minmax(560px,1fr));
+  gap:32px;
 }
 
 .team-card{
-  padding:24px;
+  padding:32px;
   overflow:visible;
+  min-height:610px;
 }
 
 .team-header{
@@ -140,18 +146,19 @@ button{
   justify-content:space-between;
   align-items:flex-start;
   gap:14px;
-  margin-bottom:18px;
+  margin-bottom:22px;
 }
 
 .team-name{
-  font-size:26px;
+  font-size:30px;
   font-weight:900;
 }
 
 .team-code{
-  font-size:16px;
+  font-size:18px;
   font-weight:800;
   opacity:.9;
+  margin-top:4px;
 }
 
 .counter{
@@ -159,21 +166,22 @@ button{
   font-weight:900;
   border:1px solid rgba(255,255,255,.25);
   border-radius:999px;
-  padding:8px 14px;
+  padding:10px 16px;
   white-space:nowrap;
 }
 
+/* 4 columnas amplias dentro de cada equipo */
 .stickers-grid{
   display:grid;
-  grid-template-columns:repeat(4,minmax(82px,1fr));
-  gap:12px;
+  grid-template-columns:repeat(4,minmax(110px,1fr));
+  gap:16px;
   width:100%;
 }
 
 .sticker{
-  min-height:76px;
-  padding:10px 8px;
-  border-radius:16px;
+  min-height:96px;
+  padding:12px 10px;
+  border-radius:18px;
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.18);
   color:white;
@@ -183,15 +191,16 @@ button{
   justify-content:center;
   text-align:center;
   font-weight:900;
-  font-size:16px;
-  line-height:1.1;
+  font-size:18px;
+  line-height:1.15;
   overflow:visible;
+  word-break:keep-all;
 }
 
 .sticker small{
   display:block;
-  margin-top:5px;
-  font-size:12px;
+  margin-top:6px;
+  font-size:13px;
   font-weight:700;
   opacity:.75;
 }
@@ -206,14 +215,14 @@ button{
 
 .card-actions{
   display:flex;
-  gap:10px;
-  margin-top:18px;
+  gap:12px;
+  margin-top:22px;
 }
 
 .card-actions button{
   flex:1;
-  padding:12px;
-  font-size:14px;
+  padding:13px;
+  font-size:15px;
 }
 
 .bottom-actions{
@@ -227,13 +236,31 @@ button{
   z-index:20;
 }
 
+@media(max-width:900px){
+  .teams-grid{
+    grid-template-columns:1fr;
+  }
+
+  .team-card{
+    min-height:auto;
+  }
+}
+
 @media(max-width:700px){
   .app{
-    padding:20px 14px 130px;
+    padding:20px 14px 140px;
+  }
+
+  .header{
+    align-items:flex-start;
   }
 
   h1{
     font-size:36px;
+  }
+
+  .subtitle{
+    font-size:16px;
   }
 
   .logo{
@@ -245,31 +272,66 @@ button{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .teams-grid{
-    grid-template-columns:1fr;
+  .stat{
+    padding:18px;
+  }
+
+  .stat strong{
+    font-size:30px;
+  }
+
+  .controls{
+    flex-direction:column;
+    position:relative;
   }
 
   .team-card{
     padding:18px;
   }
 
+  .team-header{
+    flex-direction:column;
+  }
+
+  .team-name{
+    font-size:24px;
+  }
+
   .stickers-grid{
-    grid-template-columns:repeat(4,minmax(68px,1fr));
-    gap:9px;
+    grid-template-columns:repeat(4,minmax(76px,1fr));
+    gap:10px;
   }
 
   .sticker{
-    min-height:68px;
+    min-height:78px;
     font-size:14px;
     padding:8px 5px;
+    border-radius:14px;
   }
 
-  .controls{
+  .sticker small{
+    font-size:11px;
+  }
+
+  .card-actions{
     flex-direction:column;
   }
 
   .bottom-actions{
     width:calc(100% - 24px);
     overflow-x:auto;
+    justify-content:flex-start;
+  }
+}
+
+@media(max-width:420px){
+  .stickers-grid{
+    grid-template-columns:repeat(4,minmax(70px,1fr));
+    gap:8px;
+  }
+
+  .sticker{
+    min-height:74px;
+    font-size:13px;
   }
 }
