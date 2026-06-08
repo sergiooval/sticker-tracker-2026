@@ -18,9 +18,9 @@ body{
 }
 
 .app{
-  max-width:1500px;
+  max-width:1400px;
   margin:0 auto;
-  padding:32px 24px 130px;
+  padding:32px 20px 120px;
 }
 
 .header{
@@ -94,10 +94,7 @@ h1{
   display:flex;
   gap:12px;
   padding:14px;
-  margin-bottom:28px;
-  position:sticky;
-  top:0;
-  z-index:5;
+  margin-bottom:24px;
 }
 
 input,
@@ -128,27 +125,21 @@ button{
   color:white;
 }
 
-/* CONTENEDOR GENERAL DE EQUIPOS */
 .teams-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(560px,1fr));
-  gap:32px;
+  grid-template-columns:repeat(auto-fit,minmax(520px,1fr));
+  gap:24px;
 }
 
-/* TARJETA DE CADA EQUIPO */
 .team-card{
-  padding:32px;
-  overflow:visible;
-  min-height:610px;
+  padding:24px;
 }
 
-/* ESTO COINCIDE CON TU app.js: class="team-head" */
 .team-head{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
-  gap:14px;
-  margin-bottom:22px;
+  margin-bottom:18px;
 }
 
 .team-head h3{
@@ -159,214 +150,112 @@ button{
 
 .team-head small{
   display:block;
-  font-size:18px;
-  font-weight:800;
-  opacity:.9;
-  margin-top:4px;
+  opacity:.8;
+  font-size:15px;
 }
 
-/* ESTO COINCIDE CON TU app.js: class="pill" */
 .pill{
   color:var(--gold);
   font-weight:900;
   border:1px solid rgba(255,255,255,.25);
   border-radius:999px;
-  padding:10px 16px;
-  white-space:nowrap;
+  padding:8px 14px;
 }
 
-/* ESTO COINCIDE CON TU app.js: class="stickers" */
 .stickers{
   display:grid;
-  grid-template-columns:repeat(4,minmax(110px,1fr));
-  gap:16px;
-  width:100%;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
 }
 
-/* BOTONES DE STICKERS */
 .sticker{
-  min-height:96px;
-  padding:12px 10px;
-  border-radius:18px;
-  background:rgba(255,255,255,.12);
+  min-height:95px;
+  border-radius:16px;
+  background:rgba(255,255,255,.10);
   border:1px solid rgba(255,255,255,.18);
   color:white;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
-  font-weight:900;
-  font-size:18px;
-  line-height:1.15;
-  overflow:visible;
-  word-break:keep-all;
+  padding:10px;
 }
 
 .sticker span{
+  font-size:18px;
+  font-weight:900;
   display:block;
+  line-height:1.1;
 }
 
 .sticker small{
-  display:block;
   margin-top:6px;
-  font-size:13px;
-  font-weight:700;
-  opacity:.75;
-}
-
-/* ESTADOS SEGÚN TU app.js: missing / owned / dup */
-.sticker.missing{
-  background:rgba(255,255,255,.12);
+  font-size:12px;
+  opacity:.8;
 }
 
 .sticker.owned{
-  background:#20c565;
+  background:#22c55e;
 }
 
 .sticker.dup{
   background:#f59e0b;
 }
 
-/* BOTONES MARCAR TODO / LIMPIAR */
 .team-actions{
   display:flex;
-  gap:12px;
-  margin-top:22px;
+  gap:10px;
+  margin-top:18px;
 }
 
 .team-actions button{
   flex:1;
-  padding:13px;
-  font-size:15px;
-  background:rgba(255,255,255,.16);
-  color:white;
-  border:1px solid rgba(255,255,255,.20);
 }
 
 .bottom-actions{
   position:fixed;
   left:50%;
-  bottom:24px;
   transform:translateX(-50%);
+  bottom:20px;
   display:flex;
   gap:12px;
   padding:14px;
-  z-index:20;
+  z-index:100;
 }
 
 .hidden{
-  display:none;
+  display:none !important;
 }
 
-#photoPanel{
-  margin-bottom:24px;
-}
-
-#previewImage{
-  max-width:100%;
-  border-radius:20px;
-  margin-top:14px;
-}
-
-/* TABLET */
 @media(max-width:900px){
+
   .teams-grid{
     grid-template-columns:1fr;
-  }
-
-  .team-card{
-    min-height:auto;
-  }
-}
-
-/* CELULAR */
-@media(max-width:700px){
-  .app{
-    padding:20px 14px 140px;
-  }
-
-  .header{
-    align-items:flex-start;
-  }
-
-  h1{
-    font-size:36px;
-  }
-
-  .subtitle{
-    font-size:16px;
-  }
-
-  .logo{
-    width:66px;
-    height:66px;
   }
 
   .stats{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .stat{
-    padding:18px;
-  }
-
-  .stat strong{
-    font-size:30px;
-  }
-
-  .controls{
-    flex-direction:column;
-    position:relative;
-  }
-
-  .team-card{
-    padding:18px;
-  }
-
-  .team-head{
-    flex-direction:column;
-  }
-
-  .team-head h3{
-    font-size:24px;
+  h1{
+    font-size:38px;
   }
 
   .stickers{
-    grid-template-columns:repeat(4,minmax(76px,1fr));
+    grid-template-columns:repeat(4,1fr);
     gap:10px;
   }
 
   .sticker{
-    min-height:78px;
-    font-size:14px;
-    padding:8px 5px;
-    border-radius:14px;
+    min-height:82px;
   }
 
-  .sticker small{
-    font-size:11px;
+  .sticker span{
+    font-size:15px;
   }
 
-  .team-actions{
+  .controls{
     flex-direction:column;
-  }
-
-  .bottom-actions{
-    width:calc(100% - 24px);
-    overflow-x:auto;
-    justify-content:flex-start;
-  }
-}
-
-@media(max-width:420px){
-  .stickers{
-    grid-template-columns:repeat(4,minmax(70px,1fr));
-    gap:8px;
-  }
-
-  .sticker{
-    min-height:74px;
-    font-size:13px;
   }
 }
